@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Sign In</title>
+
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static  'css/signin.css' %}">
+</head>
+
+<body>
+
+    <div class="main" style="background-color: #00b98e;">
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="{% static  'img/signin-image.jpg' %}" alt="sing up image"></figure>
+                    </div>
+
+                    <div class="signin-form">
+                        <div class="form-title">Sign in</div>
+                        <form method="POST" class="register-form" id="login-form" action="">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="email" name="email" id="your_name" placeholder="Your Email" required
+                                    class="font" />
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="your_pass" placeholder="Password" required
+                                    class="font" />
+                            </div>
+                            <span>Don't have account <a style="text-decoration:none ;" href="{% url 'signup'  %}">Sign
+                                    Up</a></span>
+                            {% if forpass %}
+                            <br>
+                            <a href="{% url 'forgotpass' %}">forgot password </a>
+                            {% endif %}
+
+                            <div class="form-group form-button ">
+                                <input type="submit" id="font" class="form-submit font " value="Log in" required />
+                            </div>
+                        </form>
+                        {% if conpass %}
+                        <div id="alertbtn" class="alert alert-danger">
+                            Invalid Password ,Please type password again !
+                        </div>
+                        {% endif %}
+                        {% if exists %}
+                        <div id="alertbtn" class="alert alert-danger">
+                            User Does Not Exists , Please Signup !
+                        </div>
+                        {% endif %}
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

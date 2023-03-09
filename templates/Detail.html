@@ -1,0 +1,171 @@
+{% include "Components/toplinks.html" %}
+{% include "Components/NavBar.html" %}
+{% load static %}
+
+<body>
+    <div class="slidercontainer">
+        <div class="ism-slider" data-radios="false" id="my-slider">
+            <ol>
+                <li>
+                    <img src="{{obj.image1.url}}" />
+                </li>
+                <li>
+                    <img src="{{obj.image2.url}}" />
+                </li>
+                <li>
+                    <img src="{{obj.image3.url}}" />
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- Wrapper -->
+    <div id="wrapper" style=" background-color: #effdf5; margin-top: 50px;">
+        <div class="container" style=" margin-left: 190px; ">
+            <div class="row">
+                <!-- Property Description -->
+                <div class="col-lg-8 col-md-7">
+                    <!-- Titlebar -->
+                    <div id="titlebar-dtl-item" class="property-titlebar margin-bottom-0">
+                        <div class="property-title">
+                            <div class="property-pricing">{{obj.price}} Lakh</div>
+                            <h2>
+                                {{obj.Bhk}} BHK&nbsp {{obj.name}} for<span
+                                    class="property-badge-sale">{{obj.typeof}}</span>
+                            </h2>
+                            <span style="white-space: nowrap" class="utf-listing-address"><a
+                                    href="https://www.google.com/maps/place/{{obj.landmark}},+{{obj.city}},+{{obj.location}}/@26.8106371,75.7390399,13z/data=!3m1!4b1!4m5!3m4!1s0x396dca6cc31968b1:0x30a5a0acd5c3017b!8m2!3d26.8191641!4d75.7659513"><i
+                                        class="fa-solid fa-location-dot"></i> At {{obj.city}}
+                            </span>
+                            <br />
+                            <span class="utf-listing-address"> &nbsp &nbsp in {{obj.location}}</span></a>
+                            <ul class="property-main-features">
+                                <li><span>{{obj.Bhk}} BHK </span></li>
+                                <li><span> RERA Approved - {{obj.approved}}</span></li>
+                                <li>Bathroom: <span>{{obj.bath}}</span></li>
+                                <li><span> Landmark: {{obj.landmark}}</span></li>
+                                <li>Area <span>{{obj.area}}</span> Sq Ft</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Property Description starts -->
+                    <div class="utf-desc-headline-item">
+                        <h3><i class="fa-solid fa-book"></i> Property Description</h3>
+                    </div>
+                    <div>
+
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit cum sit reiciendis distinctio
+                            dolor modi itaque quisquam, laboriosam aperiam hic voluptatum, dignissimos tempore. Velit
+                            provident, odio, assumenda nobis consequuntur nisi molestias commodi unde, exercitationem
+                            laboriosam vero odit libero dolore voluptatibus reiciendis rerum sit iusto architecto
+                            aspernatur quasi error necessitatibus minus repellat? Adipisci alias explicabo consectetur,
+                            non, modi voluptatum nihil officiis aspernatur aliquam vero dolorum nostrum a laboriosam
+                            fugit id reprehenderit assumenda odio quas vel vitae repudiandae ipsam! Quisquam asperiores
+                            repudiandae provident culpa, eius excepturi aliquam. Recusandae, repudiandae enim! Dolore
+                            temporibus soluta facilis obcaecati maiores quis praesentium deleniti ipsum suscipit
+                            placeat.
+                        </p>
+
+                    </div>
+
+                    <!-- Property Detail Starts -->
+                    <div class="property-description">
+                        <div class="utf-desc-headline-item">
+                            <h3><i class="fa-solid fa-house"></i>Property Details</h3>
+                        </div>
+                        <ul class="property-features margin-top-0">
+                            <li>Price: <span>₹ {{obj.price}}&nbsp Crore</span></li>
+                            <li>Number of Floors: <span>{{obj.floor}} </span></li>
+                            <li>Status: <span>{{obj.status}}</span></li>
+                            <li>Rate (Per Sq Yd): <span>{{obj.rate}}/-</span></li>
+                            <li>Property Size: <span>{{obj.area}} Sq ft</span></li>
+                            <li>Bedrooms: <span>{{obj.bed}} BHK</span></li>
+                            <li>Bathrooms: <span>{{obj.bath}}</span></li>
+                            <li>Property Type: <span>{{obj.name}}</span></li>
+                            <li>Property for: <span>{{obj.typeof}}</span></li>
+                        </ul>
+
+                        <!-- Additional  Details  starts-->
+                        <div class="utf-desc-headline-item">
+                            <h3>
+                                <i class="fa-solid fa-briefcase"></i> Additional
+                                Details
+                            </h3>
+                        </div>
+                        <ul class="property-features margin-top-0">
+                            <li>Token Amount: <span>{{obj.tokenamount}}</span></li>
+                            <li>Additional Rooms: <span>{{obj.additionalroom}}</span></li>
+                            <li>Corner Property: <span>{{obj.cornerprop}}</span></li>
+                        </ul>
+
+                        <!-- Contact Seller Starts  -->
+
+                        <div class="utf-desc-headline-item">
+                            <h3><i class="fa-sharp fa-solid fa-phone"></i>Contact Seller</h3>
+                        </div>
+                        <div class="utf-detail-social-sharing margin-top-25">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'contactseller' %}"
+                                        class="popup-with-zoom-anim log-in-button sign-in button full-width"
+                                        class="tooltip bottom" title="Whatsapp"><i class="fa-brands fa-whatsapp"
+                                            style="color: #25d366;"></i></a>
+                                </li>
+                                &nbsp
+                                <li>
+                                    <a href="{% url 'contactseller' %}"
+                                        class="popup-with-zoom-anim log-in-button sign-in button full-width"
+                                        class="tooltip bottom" title="call"><i class="fa-solid fa-phone"
+                                            style="color: rgb(55, 55, 229);"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <!-- Share Property Starts -->
+                        <div class="utf-desc-headline-item">
+                            <h3>
+                                <i class="fa-solid fa-share"></i><span> </span>
+                                <span class="mls"> </span> Share Property
+                            </h3>
+                        </div>
+                        <div class="utf-detail-social-sharing margin-top-25">
+                            <ul>
+                                <li>
+                                    <a href="" class="log-in-button sign-in button full-width" class="tooltip bottom"
+                                        title="Facebook"><i class="fa-brands fa-facebook-f"
+                                            style="color: #1877f2;"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" class="log-in-button sign-in button full-width" class="tooltip bottom"
+                                        title="Twitter"><i class="fa-brands fa-twitter" style="color: #1da1f2;"></i></a>
+                                </li>
+                                <li>
+                                    <a href="" class="log-in-button sign-in button full-width" class="tooltip bottom"
+                                        title="Whatsapp"><i class="fa-brands fa-whatsapp"
+                                            style="color: #25d366;"></i></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="utf-desc-headline-item">
+                            <h3><i class="sl sl-icon-briefcase"></i> Disclaimer</h3>
+                        </div>
+                        <div>
+                            <p>Makan has endeavoured to ascertain the requirement and the particulars of RERA
+                                registration. The advertiser has provided the details and the same can be verified from
+                                the website of the concerned RERA Authority. Users are cautioned accordingly.</p>
+                            <p>Makan is a platform for advertisement and does not vouch for the project or the details
+                                provided in the advertisement. Users are required to verify the authenticity of the
+                                claims made therein.</p>
+                        </div>
+
+
+                        <body />
+                        <html />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "Components/Footer.html" %}
+    {% include "Components/bottomlinks.html" %}

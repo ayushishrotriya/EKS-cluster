@@ -1,0 +1,60 @@
+{% include "Components/toplinks.html" %}
+{% include "Components/NavBar.html" %}
+
+{% if request.method == 'POST' %}
+<div class="alert alert-warning" role="alert">
+    We have received your request and will get in touch with you soon...!
+</div>
+{% endif %}
+<!-- Contact Form -->
+<div class="utf-welcome-text-item" style=" margin-top: 30px; ">
+    <h3>Want to Contact Seller?</h3>
+    <h4>Please fill up your details to be shared with this seller only.</h4>
+</div>
+<div class="col-md-8" style=" margin: auto; width: 500px; ">
+    <section id="contact">
+        <div class="utf-boxed-list-headline-item" style="background-color:#00b98e; margin-bottom: 0; ">
+            <h3><i class="fa-solid fa-address-book"></i>Contact Form</h3>
+        </div>
+        <div class="utf-contact-form-item">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="col-md-6" style=" width: 450px; margin:0 auto 20px auto ;">
+                    <select class="utf-chosen-select-single-item" name="reason" required
+                        style="width: 450px; height:45px; padding: 10px; margin:0 auto 20px auto ;">
+                        <option label="You are..."></option>
+                        <option>Dealer</option>
+                        <option>Agent</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+                <div class="col-md-6" style=" width: 450px; margin:0 auto 20px auto ;">
+                    <input style="width: 450px; height:45px; padding: 10px;" name="name" type="text"
+                        placeholder="First Name" required />
+                </div>
+                <div class="col-md-6" style=" width: 450px; margin:0 auto 20px auto ;">
+                    <input style="width: 450px; height:45px; padding: 10px;" name="email" type="email"
+                        placeholder="Email Address" required />
+                </div>
+                <div class="col-md-6" style=" width: 450px; margin:0 auto 20px auto ;">
+                    <input style="width: 450px; height:45px; padding: 10px;" name="mobile" type="tel"
+                        placeholder="Enter Mobile Number" required />
+                </div>
+                <br>
+                <div class="utf-centered-button margin-bottom-10">
+                    <input type="submit" class="submit button" value="Submit Message" />
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<!-- Contact Form / End -->
+
+
+
+
+
+
+
+{% include "Components/Footer.html" %}
+{% include "Components/bottomlinks.html" %}

@@ -1,0 +1,85 @@
+{% load static %}
+<!-- Search Start -->
+<div class="container-fluid bg-primary mb-5 wow fadeIn" style="padding: 35px;">
+    <div class=" container" style="width: 1100px;">
+
+        <form action="{% url 'search' %}" method="get">
+            <div class="row g-2">
+                <div class="col-md-10">
+                    <div class="row g-2">
+                        <div class="search-type">
+                            <label>
+                                <input class="first-tab" name="tab" checked="checked" type="radio" value="buy">Buy
+                            </label>
+                            <label>
+                                <input name="tab" type="radio" value="rent">Rent
+                            </label>
+                            <label>
+                                <input name="tab" type="radio" value="sell">Sell
+                            </label>
+                            <div class="utf-search-type-arrow"></div>
+                        </div>
+
+                        <div class="col-md-4" style="width: 220px;">
+                            <select name="ptype" class="form-select border-0 py-3">
+                                <option selected>Property Type</option>
+                                <option value="Appartment">Appartments</option>
+                                <option value="Villas">Villas</option>
+                                <option value="Home">Home</option>
+                                <option value="Office">Office</option>
+                                <option value="Building">Building</option>
+                                <option value="Townhouse">Townhouse</option>
+                                <option value="Shop">Shop</option>
+                                <option value="Garage">Garage</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4" style="width: 220px;">
+                            <select name="location" class="form-select border-0 py-3">
+                                <option selected>Location</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Up">Up</option>
+                                <option value="Mp">Mp</option>
+                                <option value="Panjab">Panjab</option>
+                                <option value="Hariyan">Hariyan</option>
+                                <option value="Maharastra">Maharastra</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Banglore">Banglore</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Keral">Keral</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4" style="width: 220px;">
+                            <input name="city" type="text" placeholder="Enter city ..." class="  border-0 py-3"
+                                style="padding:10px;width:220px ; margin-right: 00px; box-sizing: border-box; ">
+                        </div>
+                        <div class="col-md-4" style="width: 220px; margin-left: 8px;">
+                            <select name="price" class="form-select border-0 py-3">
+                                <option selected>Price Range</option>
+                                <option value="10">Under 10 Lakh</option>
+                                <option value="30">Under 30 Lakh</option>
+                                <option value="60">Under 60 Lakh</option>
+                                <option value="100">Under 1 Crore</option>
+                                <option value="300">Under 3 Crore</option>
+                                <option value="600">Under 6 Crore</option>
+                                <option value="1000">Under 10 Crore</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2" style="margin-top: 84px; ">
+                    <button type="submit" class="btn btn-dark border-0 w-100 py-3">Search</button>
+                </div>
+            </div>
+        </form>
+        {% if not_found %}
+        <div id="alertbtn" class="alert alert-danger" style="width:220px ; margin-top: 20px;">
+            No Property Found !
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+<!-- Search End -->
